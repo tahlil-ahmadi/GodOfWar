@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{A6191C0A-0564-44C3-92A2-07BC268AC828}"
 EndProject
@@ -40,6 +40,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{5CCCA150-82EF-4856-B04A-9189BDAA8AF4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UOM.Domain.Persistence.NH", "UOM.Domain.Persistence.NH\UOM.Domain.Persistence.NH.csproj", "{A59E898B-6B6C-45E4-91DC-F20E77E65EF3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{1B6625DB-6F40-4B9F-B775-4B50B53E05C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductManagement.Domain", "ProductManagement.Domain\ProductManagement.Domain.csproj", "{59EF6D3A-DC4E-4D23-9452-A7695CD2C3F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -91,6 +95,10 @@ Global
 		{A59E898B-6B6C-45E4-91DC-F20E77E65EF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A59E898B-6B6C-45E4-91DC-F20E77E65EF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A59E898B-6B6C-45E4-91DC-F20E77E65EF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59EF6D3A-DC4E-4D23-9452-A7695CD2C3F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59EF6D3A-DC4E-4D23-9452-A7695CD2C3F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59EF6D3A-DC4E-4D23-9452-A7695CD2C3F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59EF6D3A-DC4E-4D23-9452-A7695CD2C3F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -111,5 +119,7 @@ Global
 		{679A01B2-330E-4A8C-9DD3-65D7DC5FE207} = {0F0ED173-D2C6-4461-8686-F854D72AA702}
 		{5CCCA150-82EF-4856-B04A-9189BDAA8AF4} = {0F0ED173-D2C6-4461-8686-F854D72AA702}
 		{A59E898B-6B6C-45E4-91DC-F20E77E65EF3} = {5CCCA150-82EF-4856-B04A-9189BDAA8AF4}
+		{1B6625DB-6F40-4B9F-B775-4B50B53E05C7} = {3637F471-86C5-4B2E-9546-45E4477A479E}
+		{59EF6D3A-DC4E-4D23-9452-A7695CD2C3F4} = {1B6625DB-6F40-4B9F-B775-4B50B53E05C7}
 	EndGlobalSection
 EndGlobal
