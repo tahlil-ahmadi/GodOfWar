@@ -23,5 +23,17 @@ namespace ProductManagement.Tests.Acceptance
         {
             ScenarioContext.Current.Pending();
         }
+        
+        [Then(@"system should prevent me to save it")]
+        public void ThenSystemShouldPreventMeToSaveIt()
+        {
+            ScenarioContext.Current.Pending();
+        }
+        
+        [Then(@"show alter that product should have Abstract Product parent")]
+        public void ThenShowAlterThatProductShouldHaveAbstractProductParent()
+        {
+            ScenarioContext.Current.Pending();
+        }
     }
 }
