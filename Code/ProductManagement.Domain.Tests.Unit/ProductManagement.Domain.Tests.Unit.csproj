@@ -84,6 +84,16 @@
   <ItemGroup>
     <Analyzer Include="..\packages\xunit.analyzers.0.10.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Framework.Domain\Framework.Domain.csproj">
+      <Project>{80323DAD-2D29-4E5B-9F84-CC1883657969}</Project>
+      <Name>Framework.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProductManagement.Domain\ProductManagement.Domain.csproj">
+      <Project>{59ef6d3a-dc4e-4d23-9452-a7695cd2c3f4}</Project>
+      <Name>ProductManagement.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

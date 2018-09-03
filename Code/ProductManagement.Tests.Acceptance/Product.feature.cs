@@ -108,7 +108,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 13
  testRunner.Given("I have a product hierarchy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 14
- testRunner.When("I register a product that have ActualProduct or GenericProduct parent", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I register a product that have ActualProduct parent", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 15
  testRunner.Then("system should prevent me to save it", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 16
