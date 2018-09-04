@@ -40,10 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Constraints\Boolean.cs" />
+    <Compile Include="Model\Constraints\Constraint.cs" />
+    <Compile Include="Model\Constraints\DateRange.cs" />
+    <Compile Include="Model\Constraints\Numeric.cs" />
+    <Compile Include="Model\Constraints\Selective.cs" />
     <Compile Include="Model\Product\ActualProduct.cs" />
     <Compile Include="Model\Product\GenericProduct.cs" />
     <Compile Include="Model\Product\Package.cs" />
     <Compile Include="Model\Product\Product.cs" />
+    <Compile Include="Model\Properties\Property.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -52,6 +58,7 @@
       <Name>Framework.Domain</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -14,3 +14,4 @@ Scenario: Product parent
 	When I register a product that have ActualProduct parent
 	Then system should prevent me to save it
 	And show alter that product should have Abstract Product parent
+
