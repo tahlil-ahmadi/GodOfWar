@@ -67,6 +67,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConvertUnitOfMeasures.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConvertUnitOfMeasures.feature</DependentUpon>
+    </Compile>
     <Compile Include="Dimension.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -77,6 +82,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ConvertUnitOfMeasures.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ConvertUnitOfMeasures.feature.cs</LastGenOutput>
+    </None>
     <None Include="Dimension.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Dimension.feature.cs</LastGenOutput>
