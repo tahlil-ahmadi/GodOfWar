@@ -7,7 +7,6 @@ using UOM.Domain.Model.Dimensions;
 
 namespace UOM.Application
 {
-	//This is a test
     public class DimensionService : IDimensionService
     {
         private readonly IDimensionRepository _repository;
@@ -18,7 +17,7 @@ namespace UOM.Application
 
         public void Create(CreateDimensionDTO dto)
         {
-            var dimension = new Dimension(1,dto.Name);
+            var dimension = new Dimension(dto.Name);
             _repository.Add(dimension);
         }
     }

@@ -90,7 +90,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 8
  testRunner.When("I register the dimension", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 9
- testRunner.Then("It should be available in the list of system dimensions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("It should be appear in the list of dimensions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -15,7 +15,7 @@ namespace UOM.Application.Tests.Unit
             var dto = new CreateDimensionDTO { Name = time };
             var repository = Substitute.For<IDimensionRepository>();
             var service = new DimensionService(repository);
-            var expectedDimension = new Dimension(1, time);
+            var expectedDimension = new Dimension(time);
 
             service.Create(dto);
 

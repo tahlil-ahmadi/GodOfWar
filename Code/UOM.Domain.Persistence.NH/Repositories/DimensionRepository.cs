@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NHibernate;
+﻿using NHibernate;
 using UOM.Domain.Model.Dimensions;
 
-namespace UOM.Domain.Persistence.NH.Repositories
+namespace UOM.Persistence.NH.Repositories
 {
     public class DimensionRepository : IDimensionRepository
     {

@@ -1,14 +1,15 @@
-﻿using Framework.Domain;
+﻿using System;
+using Framework.Domain;
 
 namespace UOM.Domain.Model.Dimensions
 {
-    public class Dimension : AggregateRoot<long>
+    public class Dimension : AggregateRoot<Guid>
     {
         public string Name { get; private set; }
         protected Dimension(){} //For ORM Only
-        public Dimension(long id, string name)
+        public Dimension(string name)
         {
-            Id = id;
+            Id = Guid.NewGuid();
             Name = name;
         }
     }

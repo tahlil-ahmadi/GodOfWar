@@ -6,7 +6,7 @@
 Scenario: Define new dimension
 	Given I have a dimension called 'Length'
 	When I register the dimension
-	Then It should be available in the list of system dimensions
+	Then It should be appear in the list of dimensions
 
 Scenario: Defining duplicate dimension
 	Given I have already defined a dimension called 'Temperature'

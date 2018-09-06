@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{679A01B2-330E-4A8C-9DD3-65D7DC5FE207}</ProjectGuid>
+    <ProjectGuid>{E7184B1D-AEA7-4FD4-999D-7DEF111F3546}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UOM.Config.Castle</RootNamespace>
-    <AssemblyName>UOM.Config.Castle</AssemblyName>
+    <RootNamespace>Framework.NH</RootNamespace>
+    <AssemblyName>Framework.NH</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -33,12 +33,6 @@
     <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <HintPath>..\packages\Antlr3.Runtime.3.5.1\lib\net40-client\Antlr3.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <HintPath>..\packages\Castle.Core.4.2.0\lib\net45\Castle.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Castle.Windsor, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <HintPath>..\packages\Castle.Windsor.4.1.0\lib\net45\Castle.Windsor.dll</HintPath>
-    </Reference>
     <Reference Include="Iesi.Collections, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <HintPath>..\packages\Iesi.Collections.4.0.4\lib\net461\Iesi.Collections.dll</HintPath>
     </Reference>
@@ -54,10 +48,8 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Transactions" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -66,38 +58,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UomBootstrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SessionFactoryConfigurator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Framework.NH\Framework.NH.csproj">
-      <Project>{e7184b1d-aea7-4fd4-999d-7def111f3546}</Project>
-      <Name>Framework.NH</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UOM.Application.Contracts\UOM.Application.Contracts.csproj">
-      <Project>{6277c973-c95c-41c0-ad6e-825845a72cc4}</Project>
-      <Name>UOM.Application.Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UOM.Application\UOM.Application.csproj">
-      <Project>{0ed05636-9c82-4d92-8130-83e8477d52c1}</Project>
-      <Name>UOM.Application</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UOM.Domain.Persistence.NH\UOM.Persistence.NH.csproj">
-      <Project>{a59e898b-6b6c-45e4-91dc-f20e77e65ef3}</Project>
-      <Name>UOM.Persistence.NH</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UOM.Domain\UOM.Domain.csproj">
-      <Project>{a6aa75a8-a5f3-482c-8af3-6eddb917779c}</Project>
-      <Name>UOM.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UOM.Interface.RestApi\UOM.Interface.RestApi.csproj">
-      <Project>{0a3974a6-17be-46dc-a923-daef902a7a7e}</Project>
-      <Name>UOM.Interface.RestApi</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

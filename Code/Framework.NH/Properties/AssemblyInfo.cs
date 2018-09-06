@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("UOM.Persistence.NH")]
+[assembly: AssemblyTitle("Framework.NH")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("UOM.Persistence.NH")]
+[assembly: AssemblyProduct("Framework.NH")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("a59e898b-6b6c-45e4-91dc-f20e77e65ef3")]
+[assembly: Guid("e7184b1d-aea7-4fd4-999d-7def111f3546")]
 
 // Version information for an assembly consists of the following four values:
 //

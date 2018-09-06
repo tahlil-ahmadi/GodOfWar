@@ -11,7 +11,7 @@ namespace UOM.Domain.Tests.Unit
         private readonly BaseUnitOfMeasure _baseMeasurement;
         public ScaledUntiOfMeasureTests()
         {
-            var dimension = new Dimension(1,"Length");
+            var dimension = new Dimension("Length");
             _baseMeasurement = new BaseUnitOfMeasure(dimension, "Meter", "MR");
         }
 
