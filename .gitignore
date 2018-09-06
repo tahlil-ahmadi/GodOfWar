@@ -260,3 +260,6 @@ paket-files/
 __pycache__/
 *.pyc
 *.ncrunchsolution
+Build/tools/*
+!Build/tools/packages.config
+!Build/tools/packages.config.md5sum
