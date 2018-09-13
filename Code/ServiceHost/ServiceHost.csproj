@@ -112,6 +112,10 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Framework.Config.Castle\Framework.Config.Castle.csproj">
+      <Project>{A27F55FD-0EC7-4FC2-A2CD-B7000AC08950}</Project>
+      <Name>Framework.Config.Castle</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UOM.Config.Castle\UOM.Config.Castle.csproj">
       <Project>{679a01b2-330e-4a8c-9dd3-65d7dc5fe207}</Project>
       <Name>UOM.Config.Castle</Name>

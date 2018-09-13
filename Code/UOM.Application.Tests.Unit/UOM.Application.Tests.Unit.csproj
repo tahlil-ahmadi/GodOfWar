@@ -89,7 +89,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="DimensionServiceTests.cs" />
+    <Compile Include="DimensionCommandHandlerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -4,6 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
+using Framework.Application;
 using Framework.NH;
 using NHibernate;
 using UOM.Application;
@@ -18,9 +19,10 @@ namespace UOM.Config.Castle
     {
         public static void Config(IWindsorContainer container)
         {
-            container.Register(Component.For<IDimensionService>()
-                .ImplementedBy<DimensionService>()
-                .LifestylePerWebRequest());
+            container.Register(Classes.FromAssemblyContaining<DimensionCommandHandlers>()
+                .BasedOn(typeof(ICommandHandler<>))
+                .WithServiceAllInterfaces()
+                .LifestyleTransient());
 
             container.Register(Component.For<DimensionsController>()
                 .LifestyleTransient());

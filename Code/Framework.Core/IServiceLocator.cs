@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UOM.Application
+namespace Framework.Core
 {
-    public class CreateDimensionDTO
+    public interface IServiceLocator
     {
-        public string Name { get; set; }
+        T GetInstance<T>();
+        void Release(object obj);
     }
 }

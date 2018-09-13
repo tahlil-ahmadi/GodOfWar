@@ -40,10 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DimensionService.cs" />
+    <Compile Include="DimensionCommandHandlers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Framework.Application\Framework.Application.csproj">
+      <Project>{BA244181-E8CD-4F7E-B6A4-DA8B3463E9B6}</Project>
+      <Name>Framework.Application</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Framework.Domain\Framework.Domain.csproj">
       <Project>{80323dad-2d29-4e5b-9f84-cc1883657969}</Project>
       <Name>Framework.Domain</Name>

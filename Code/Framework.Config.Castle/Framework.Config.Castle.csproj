@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0A3974A6-17BE-46DC-A923-DAEF902A7A7E}</ProjectGuid>
+    <ProjectGuid>{A27F55FD-0EC7-4FC2-A2CD-B7000AC08950}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UOM.Interface.RestApi</RootNamespace>
-    <AssemblyName>UOM.Interface.RestApi</AssemblyName>
+    <RootNamespace>Framework.Config.Castle</RootNamespace>
+    <AssemblyName>Framework.Config.Castle</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,20 +30,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.2.0\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.4.1.0\lib\net45\Castle.Windsor.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Net.Http.Formatting, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.6\lib\net45\System.Net.Http.Formatting.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Http, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.6\lib\net45\System.Web.Http.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Http.WebHost, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.6\lib\net45\System.Web.Http.WebHost.dll</HintPath>
-    </Reference>
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,22 +49,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DimensionsController.cs" />
+    <Compile Include="FrameworkBootstrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Framework.Application\Framework.Application.csproj">
-      <Project>{BA244181-E8CD-4F7E-B6A4-DA8B3463E9B6}</Project>
+      <Project>{ba244181-e8cd-4f7e-b6a4-da8b3463e9b6}</Project>
       <Name>Framework.Application</Name>
     </ProjectReference>
-    <ProjectReference Include="..\UOM.Application.Contracts\UOM.Application.Contracts.csproj">
-      <Project>{6277c973-c95c-41c0-ad6e-825845a72cc4}</Project>
-      <Name>UOM.Application.Contracts</Name>
+    <ProjectReference Include="..\Framework.CastleWindsor\Framework.CastleWindsor.csproj">
+      <Project>{b5d9fb43-9ac5-4219-af76-d84a11d8ada5}</Project>
+      <Name>Framework.CastleWindsor</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Framework.Core\Framework.Core.csproj">
+      <Project>{2e452233-f13b-4940-810b-d01b8c51d4a7}</Project>
+      <Name>Framework.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework.Domain\Framework.Domain.csproj">
+      <Project>{80323dad-2d29-4e5b-9f84-cc1883657969}</Project>
+      <Name>Framework.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework.NH\Framework.NH.csproj">
+      <Project>{e7184b1d-aea7-4fd4-999d-7def111f3546}</Project>
+      <Name>Framework.NH</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

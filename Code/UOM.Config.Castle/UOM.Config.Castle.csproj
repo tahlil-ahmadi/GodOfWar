@@ -74,6 +74,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Framework.Application\Framework.Application.csproj">
+      <Project>{BA244181-E8CD-4F7E-B6A4-DA8B3463E9B6}</Project>
+      <Name>Framework.Application</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Framework.NH\Framework.NH.csproj">
       <Project>{e7184b1d-aea7-4fd4-999d-7def111f3546}</Project>
       <Name>Framework.NH</Name>
