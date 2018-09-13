@@ -1,4 +1,5 @@
 #tool "nuget:?package=xunit.runner.console"
+#tool "nuget:?package=JetBrains.dotCover.CommandLineTools"
 
 var configuration = Argument("Configuration", "Release");
 var solutionPath = Argument("SolutionPath", @"../Code/GodOfWar.sln");
@@ -24,13 +25,30 @@ Task("Build")
 Task("Run-Unit-Tests")
     .Does(()=>
 {
-    var testAssemblies = GetFiles("../Code/**/bin/"+configuration + "/*.Tests.Unit.dll");
-    XUnit2(testAssemblies);
+    //var testAssemblies = GetFiles("../Code/**/bin/"+configuration + "/*.Tests.Unit.dll");
+    //XUnit2(testAssemblies);
+
+    DotCoverCover(tool => {
+    tool.XUnit2("../Code/**/bin/" +configuration + "/*.Tests.Unit.dll",
+    new XUnit2Settings {
+      ShadowCopy = false
+    });
+    },
+    new FilePath("./TestResults/result.dcvr"),
+    new DotCoverCoverSettings()
+        .WithFilter("+:UOM.*")
+        .WithFilter("-:*.Tests.Unit"));
+
+    DotCoverReport(new FilePath("./TestResults/result.dcvr"),
+        new FilePath("./TestResults/result.html"),
+        new DotCoverReportSettings {
+            ReportType = DotCoverReportType.HTML
+        });
 });
 
 Task("Default")
-    .IsDependentOn("Clean")
-    .IsDependentOn("Build")
+    //.IsDependentOn("Clean")
+    //.IsDependentOn("Build")
     .IsDependentOn("Run-Unit-Tests");
 
 RunTarget("Default");
