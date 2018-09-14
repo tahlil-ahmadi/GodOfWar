@@ -1,33 +1,28 @@
 ﻿using System.Collections.Generic;
-using FluentAssertions;
 using ProductManagement.Domain.Model.Constraints;
 using ProductManagement.Domain.Model.Product;
 using Xunit;
 
 namespace ProductManagement.Domain.Tests.Unit
 {
-    public class ProductTests
+    public class ActualProductTests
     {
-        private readonly ProductBuilder _productBuilder;
-        public ProductTests()
+        private readonly ActualProductBuilder _actualProductBuilder;
+        public ActualProductTests()
         {
-            _productBuilder = new ProductBuilder();
+            _actualProductBuilder = new ActualProductBuilder();
         }
 
         [Fact]
-        public void Constructor_should_create_product()
+        public void Constructor_should_throw_exception_when_parent_isnot_genericproduct()
         {
-            var productname = "Soccer ball";
-            var product = _productBuilder.WithRootProduct(productname).Build();
-            product.Name.Should().Be(productname);
-            product.Parent.Should().Be(null);
-        }
+            var productname = "";
+            var actualproduct = _actualProductBuilder.WithActualProductParentNoProperty(productname);
 
-        
+        }
     }
 
-
-    internal class ProductBuilder
+    internal class ActualProductBuilder
     {
         private string Name { get; set; }
         private Product Parent { get; set; }
@@ -38,14 +33,14 @@ namespace ProductManagement.Domain.Tests.Unit
             return new Product(Name, Parent, PropertyConstraints);
         }
 
-        public ProductBuilder WithRootProduct(string productname)
+        public ActualProductBuilder WithRootProduct(string productname)
         {
             Name = productname;
             Parent = null;
             return this;
         }
 
-        public ProductBuilder WithRootProductNoProperty(string productname)
+        public ActualProductBuilder WithRootProductNoProperty(string productname)
         {
             Name = productname;
             Parent = null;
@@ -53,10 +48,10 @@ namespace ProductManagement.Domain.Tests.Unit
             return this;
         }
 
-        public ProductBuilder WithActualProductParentNoProperty(string productname)
+        public ActualProductBuilder WithActualProductParentNoProperty(string productname)
         {
             Name = productname;
-            Parent = new ActualProduct("",null,null);
+            Parent = new ActualProduct("", null, null);
             PropertyConstraints = null;
             return this;
         }
