@@ -44,6 +44,7 @@
     <Compile Include="Model\Constraints\Constraint.cs" />
     <Compile Include="Model\Constraints\DateRange.cs" />
     <Compile Include="Model\Constraints\Numeric.cs" />
+    <Compile Include="Model\Constraints\PropertyConstraint.cs" />
     <Compile Include="Model\Constraints\Selective.cs" />
     <Compile Include="Model\Product\ActualProduct.cs" />
     <Compile Include="Model\Product\GenericProduct.cs" />

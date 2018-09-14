@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
-using ProductManagement.Domain.Model.Properties;
+using ProductManagement.Domain.Model.Constraints;
 
 namespace ProductManagement.Domain.Model.Product
 {
     public class ActualProduct : Product 
     {
-        public ActualProduct(string name, List<Property> properties) : base(name,null, properties)
+        public ActualProduct(string name,Product parent, List<PropertyConstraint> propertyConstraints) : base(name, parent, propertyConstraints)
         {
             
         }
