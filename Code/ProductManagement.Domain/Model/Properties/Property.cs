@@ -7,13 +7,14 @@ namespace ProductManagement.Domain.Model.Properties
     {
         public string Name { get; private set; }
 
-        public Property(string name)
+        public Property(long id, string name)
         {
             Validate(name);
+            Id = id;
             Name = name;
         }
 
-        public void Validate(string name)
+        private void Validate(string name)
         {
             if (string.IsNullOrEmpty(name))
                 throw new Exception("Property Name could not be null or empty.");

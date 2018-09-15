@@ -78,7 +78,8 @@
     <Compile Include="ActualProductTests.cs" />
     <Compile Include="ProductTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PropertyTests.cs" />
+    <Compile Include="PropertyTests\PropertyBuilder.cs" />
+    <Compile Include="PropertyTests\PropertyTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
