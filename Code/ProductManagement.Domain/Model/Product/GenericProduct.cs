@@ -5,7 +5,8 @@ namespace ProductManagement.Domain.Model.Product
 {
     public class GenericProduct : Product
     {
-        public GenericProduct(string name, Product parent, List<PropertyConstraint> propertyConstraints) : base(name, parent, propertyConstraints)
+        public GenericProduct(long id, string name, Product parent, List<PropertyConstraint> propertyConstraints) 
+            : base(id, name, parent, propertyConstraints)
         {
         }
     }

@@ -11,6 +11,7 @@ namespace ProductManagement.Domain.Tests.Unit.PropertyTests
         {
             _propertyBuilder = new PropertyBuilder();
         }
+
         [Fact]
         public void Constructor_should_create_property()
         {
@@ -22,15 +23,15 @@ namespace ProductManagement.Domain.Tests.Unit.PropertyTests
         [Fact]
         public void Constructor_should_throw_when_propertyName_isnull()
         {
-            Action td = () => _propertyBuilder.WithName(null).Build();
-            td.Should().Throw<Exception>();
+            Action property = () => _propertyBuilder.WithName(null).Build();
+            property.Should().Throw<Exception>();
         }
 
         [Fact]
         public void Constructor_should_throw_when_propertyName_is_empty()
         {
-            Action td = () => _propertyBuilder.WithName("").Build();
-            td.Should().Throw<Exception>();
+            Action property = () => _propertyBuilder.WithName("").Build();
+            property.Should().Throw<Exception>();
         }
     }
 }
