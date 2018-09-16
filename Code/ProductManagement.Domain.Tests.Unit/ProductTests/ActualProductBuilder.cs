@@ -24,9 +24,8 @@ namespace ProductManagement.Domain.Tests.Unit.ProductTests
             return this;
         }
         
-        public ActualProductBuilder WithActualProductParent(string productname)
+        public ActualProductBuilder WithActualProductParent()
         {
-            _name = productname;
             _parent = new ActualProduct(0,"", null, null);
             return this;
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using FluentAssertions;
+using ProductManagement.Domain.Model.Product;
 using Xunit;
 
 namespace ProductManagement.Domain.Tests.Unit.ProductTests
@@ -21,12 +22,6 @@ namespace ProductManagement.Domain.Tests.Unit.ProductTests
             product.Should().Throw<Exception>();
         }
 
-        [Fact]
-        public void Constructor_should_throw_when_parent_isnot_genericproduct()
-        {
-            var productname = "";
-            Action actualproduct = () => _actualProductBuilder.WithActualProductParent(productname).Build();
-            actualproduct.Should().Throw<Exception>();
-        }
+        
     }
 }
