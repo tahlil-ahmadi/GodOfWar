@@ -7,3 +7,4 @@ namespace ProductManagement.Domain.Model.Constraints
         public Dictionary<long,string> SelectiveList { get; set; }
     }
 }
+

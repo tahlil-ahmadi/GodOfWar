@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Framework.Domain;
-using ProductManagement.Domain.Model.Properties;
+using ProductManagement.Domain.Model.Constraints;
 
 namespace ProductManagement.Domain.Model.Product
 {
@@ -9,13 +10,21 @@ namespace ProductManagement.Domain.Model.Product
         public string Name { get; private set; }
         public Product Parent { get; private set; }
 
-        public List<Property> Properties { get; private set; }
+        public List<PropertyConstraint> PropertyConstraints { get; private set; }
 
-        public Product(string name, Product parent, List<Property> properties)
+        public Product(long id, string name, Product parent, List<PropertyConstraint> propertyConstraints)
         {
+            Validate(name);
+            Id = id;
             Name = name;
             Parent = parent;
-            Properties = properties;
+            PropertyConstraints = propertyConstraints;
+        }
+
+        private void Validate(string name)
+        {
+            if (string.IsNullOrEmpty(name))
+                throw new Exception("Product name could not be null or empty.");
         }
     }
 }

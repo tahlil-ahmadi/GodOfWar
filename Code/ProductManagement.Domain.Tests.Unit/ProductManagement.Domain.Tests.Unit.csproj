@@ -75,8 +75,13 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="ProductTests.cs" />
+    <Compile Include="ProductTests\ActualProductBuilder.cs" />
+    <Compile Include="ProductTests\ActualProductTests.cs" />
+    <Compile Include="ProductTests\ProductBuilder.cs" />
+    <Compile Include="ProductTests\ProductTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertyTests\PropertyBuilder.cs" />
+    <Compile Include="PropertyTests\PropertyTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
