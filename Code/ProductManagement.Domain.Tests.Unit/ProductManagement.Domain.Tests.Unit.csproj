@@ -75,7 +75,8 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="ProductTests.cs" />
+    <Compile Include="Model\Products\ProductConstraints\SelectiveConstraintTests.cs" />
+    <Compile Include="Model\Products\ProductTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

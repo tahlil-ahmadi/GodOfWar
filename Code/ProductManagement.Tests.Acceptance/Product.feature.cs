@@ -36,8 +36,8 @@ namespace ProductManagement.Tests.Acceptance
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Product", "\tIn order to\r\n\tAs a Product Management administrator\r\n\tI want to be able to manag" +
-                    "e Products", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Product", "\tIn order to \r\n\tAs a Product Management administrator\r\n\tI want to be able to mana" +
+                    "ge Products", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -77,42 +77,49 @@ namespace ProductManagement.Tests.Acceptance
             this.ScenarioTearDown();
         }
         
-        [Xunit.FactAttribute(DisplayName="Define new product")]
+        [Xunit.FactAttribute(DisplayName="Defining a root Generic Product")]
         [Xunit.TraitAttribute("FeatureTitle", "Product")]
-        [Xunit.TraitAttribute("Description", "Define new product")]
-        public virtual void DefineNewProduct()
+        [Xunit.TraitAttribute("Description", "Defining a root Generic Product")]
+        public virtual void DefiningARootGenericProduct()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Define new product", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Defining a root Generic Product", null, ((string[])(null)));
 #line 6
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 7
- testRunner.Given("I have a product called \'Soccer ball\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 8
- testRunner.When("I register the product", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 9
- testRunner.Then("It should be available in the list of system Product Management", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [Xunit.FactAttribute(DisplayName="Product parent")]
-        [Xunit.TraitAttribute("FeatureTitle", "Product")]
-        [Xunit.TraitAttribute("Description", "Product parent")]
-        public virtual void ProductParent()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Product parent", null, ((string[])(null)));
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Title"});
+            table1.AddRow(new string[] {
+                        "Taste"});
+            table1.AddRow(new string[] {
+                        "Volume"});
+            table1.AddRow(new string[] {
+                        "Description"});
+#line 7
+ testRunner.Given("I have already defined the following constraints", ((string)(null)), table1, "Given ");
 #line 12
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
+ testRunner.When("I have define a generic product \'Nectar\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Title",
+                        "Type",
+                        "Options"});
+            table2.AddRow(new string[] {
+                        "Taste",
+                        "Selective",
+                        "Orange, Apple, Banana, Watermelon"});
+            table2.AddRow(new string[] {
+                        "Volume",
+                        "NumberRange",
+                        "100-3000 cc"});
+            table2.AddRow(new string[] {
+                        "Description",
+                        "String",
+                        ""});
 #line 13
- testRunner.Given("I have a product hierarchy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 14
- testRunner.When("I register a product that have ActualProduct parent", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 15
- testRunner.Then("system should prevent me to save it", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 16
- testRunner.And("show alter that product should have Abstract Product parent", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I have defined the following constraint for it :", ((string)(null)), table2, "And ");
+#line 18
+ testRunner.Then("It should be available in the list of generic products", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

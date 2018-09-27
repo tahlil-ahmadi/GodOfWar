@@ -1,6 +1,8 @@
 ﻿namespace ProductManagement.Domain.Model.Constraints
 {
-    public abstract class Constraint
+    public class Constraint
     {
+        public long Id { get; set; }
+        public string Title { get; set; }
     }
 }

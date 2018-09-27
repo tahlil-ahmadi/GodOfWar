@@ -1,21 +1,26 @@
 ﻿using System.Collections.Generic;
 using Framework.Domain;
-using ProductManagement.Domain.Model.Properties;
+using ProductManagement.Domain.Model.Product.ProductConstraints;
 
 namespace ProductManagement.Domain.Model.Product
 {
-    public class Product : AggregateRoot<long>
+    public abstract class Product : AggregateRoot<long>
     {
-        public string Name { get; private set; }
-        public Product Parent { get; private set; }
-
-        public List<Property> Properties { get; private set; }
-
-        public Product(string name, Product parent, List<Property> properties)
+        public string Name { get;private set; }
+        public long? ParentProductId { get;private set; }
+        protected Product(string name) : this(name, null)
         {
-            Name = name;
-            Parent = parent;
-            Properties = properties;
+        }
+        protected Product(string name, GenericProduct parentProduct)
+        {
+            this.Name = name;
+            if (parentProduct != null)
+                this.ParentProductId = parentProduct.Id;
+        }
+
+        public void AddConstraint(ProductConstraint constraint)
+        {
+            //...
         }
     }
 }
