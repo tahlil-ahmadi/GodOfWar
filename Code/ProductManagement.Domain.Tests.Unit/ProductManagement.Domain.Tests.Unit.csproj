@@ -78,6 +78,7 @@
     <Compile Include="Model\Products\ProductConstraints\ConstraintBuilder.cs" />
     <Compile Include="Model\Products\ProductConstraints\NumberRangeConstraintBuilder.cs" />
     <Compile Include="Model\Products\ProductConstraints\NumberRangeConstraintTests.cs" />
+    <Compile Include="Model\Products\ProductConstraints\OptionBuilder.cs" />
     <Compile Include="Model\Products\ProductConstraints\SelectiveConstraintTests.cs" />
     <Compile Include="Model\Products\ProductConstraints\StringConstraintBuilder.cs" />
     <Compile Include="Model\Products\ProductConstraints\StringConstraintTests.cs" />
