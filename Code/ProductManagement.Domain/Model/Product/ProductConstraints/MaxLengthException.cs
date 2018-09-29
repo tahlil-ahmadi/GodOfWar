@@ -2,7 +2,8 @@
 
 namespace ProductManagement.Domain.Model.Product.ProductConstraints
 {
-    public class DuplicateOptionException : Exception
+    public class MaxLengthException : Exception 
     {
+
     }
 }

@@ -43,6 +43,7 @@
     <Compile Include="Model\Constraints\Constraint.cs" />
     <Compile Include="Model\Product\ActualProduct.cs" />
     <Compile Include="Model\Product\ProductConstraints\DuplicateOptionException.cs" />
+    <Compile Include="Model\Product\ProductConstraints\MaxLengthException.cs" />
     <Compile Include="Model\Product\ProductConstraints\Option.cs" />
     <Compile Include="Model\Product\ProductConstraints\ProductConstraint.cs" />
     <Compile Include="Model\Product\ProductConstraints\NumberRangeConstraint.cs" />
