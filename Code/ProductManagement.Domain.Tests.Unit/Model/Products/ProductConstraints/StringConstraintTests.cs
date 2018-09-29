@@ -1,16 +1,19 @@
 ﻿using FluentAssertions;
-using ProductManagement.Domain.Model.Product.ProductConstraints;
 using Xunit;
 using System;
+using ProductManagement.Domain.Model.Product.ProductConstraints;
 
 namespace ProductManagement.Domain.Tests.Unit.Model.Products.ProductConstraints
 {
     public class StringConstraintTests
     {
         private readonly ConstraintBuilder _constraintBuilder;
+        private readonly StringConstraintBuilder _stringConstraintBuilder;
+
         public StringConstraintTests()
         {
             _constraintBuilder = new ConstraintBuilder();
+            _stringConstraintBuilder = new StringConstraintBuilder();
         }
 
         [Fact]
@@ -20,10 +23,10 @@ namespace ProductManagement.Domain.Tests.Unit.Model.Products.ProductConstraints
             var constraintTitle = "description";
             var maxlen = 12;
             var format = "National Code";
-            var description = _constraintBuilder.WithId(constraintId).WithTitle(constraintTitle).Build();
-            var stringconstraint = new StringConstraint(format,maxlen,description);
+            var constraint = _constraintBuilder.WithId(constraintId).WithTitle(constraintTitle).Build();
+            var stringconstraint = _stringConstraintBuilder.WithFormat(format).WithMaxLength(maxlen).WithConstraint(constraint).Build();
 
-            stringconstraint.ConstraintId.Should().Be(description.Id);
+            stringconstraint.ConstraintId.Should().Be(constraintId);
             stringconstraint.Format.Should().Be(format);
             stringconstraint.MaxLength.Should().Be(maxlen);
         }
@@ -34,9 +37,9 @@ namespace ProductManagement.Domain.Tests.Unit.Model.Products.ProductConstraints
         public void Constructor_should_throw_when_maxLength_lower_than_zero(long maxlen)
         {
             var format = "National Code";
-            var description = _constraintBuilder.Build();
+            var constraint = _constraintBuilder.Build();
 
-            Action stringconstraint = () => new StringConstraint(format, maxlen, description);
+            Action stringconstraint = () => _stringConstraintBuilder.WithFormat(format).WithMaxLength(maxlen).WithConstraint(constraint).Build();
 
             stringconstraint.Should().Throw<MaxLengthException>();
         }
