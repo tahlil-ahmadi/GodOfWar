@@ -102,6 +102,10 @@
       <Project>{0a3974a6-17be-46dc-a923-daef902a7a7e}</Project>
       <Name>UOM.Interface.RestApi</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UOM.Query.Model\UOM.Query.Model.csproj">
+      <Project>{d9dac26f-ccf8-48c3-b999-5dfaaa9bc5bf}</Project>
+      <Name>UOM.Query.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

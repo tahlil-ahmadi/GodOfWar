@@ -1,4 +1,4 @@
-﻿namespace UOM.Specs.Hosting
+﻿namespace UOM.Tests.Acceptance.Hosting
 {
     public class IISExpressHostFactory
     {

@@ -12,6 +12,7 @@ using UOM.Domain.Model.Dimensions;
 using UOM.Interface.RestApi;
 using UOM.Persistence.NH.Mappings;
 using UOM.Persistence.NH.Repositories;
+using UOM.Query.Model.Repositories;
 
 namespace UOM.Config.Castle
 {
@@ -26,6 +27,10 @@ namespace UOM.Config.Castle
 
             container.Register(Component.For<DimensionsController>()
                 .LifestyleTransient());
+
+            container.Register(Component.For<IDimensionQueryRepository>()
+                .ImplementedBy<DimensionQueryRepository>()
+                .LifestylePerWebRequest());
 
             ConfigPersistence(container);
         }

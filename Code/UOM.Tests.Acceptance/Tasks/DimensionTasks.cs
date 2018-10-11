@@ -19,5 +19,14 @@ namespace UOM.Tests.Acceptance.Tasks
             var response = client.Execute(request);
             return response.IsSuccessful;
         }
+
+        internal DimensionTestModel GetDimension(Guid id)
+        {
+            //TODO: refactor 
+            var client = new RestClient("http://localhost:20070/api");
+            var request = new RestRequest($"Dimensions/{id}", Method.GET);
+            var data =  client.Execute<DimensionTestModel>(request).Data;
+            return data;
+        }
     }
 }

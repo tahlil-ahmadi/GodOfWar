@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace UOM.Specs.Hosting
+namespace UOM.Tests.Acceptance.Hosting
 {
     public static class IISExpressConstants
     {

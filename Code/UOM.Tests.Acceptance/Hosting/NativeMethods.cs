@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace UOM.Specs.Hosting
+namespace UOM.Tests.Acceptance.Hosting
 {
     internal static class NativeMethods
     {

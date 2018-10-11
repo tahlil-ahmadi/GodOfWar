@@ -1,10 +1,9 @@
 ﻿using System;
-using RestSharp;
 using TechTalk.SpecFlow;
 using UOM.Tests.Acceptance.Model;
 using UOM.Tests.Acceptance.Tasks;
 
-namespace UOM.Tests.Acceptance
+namespace UOM.Tests.Acceptance.Steps
 {
     [Binding]
     public class ManagingDimensionsSteps
@@ -32,8 +31,11 @@ namespace UOM.Tests.Acceptance
         [Then(@"It should be appear in the list of dimensions")]
         public void ThenItShouldBeAppearInTheListOfDimensions()
         {
+            //TODO:just for the test cause
+            var task = new DimensionTasks();
+            var dimension = task.GetDimension(Guid.Parse("98B87D78-37DA-4876-8742-21997BFF93C9"));
         }
-        
+
         [Then(@"The system should prevent me from registering the dimension")]
         public void ThenTheSystemShouldPreventMeFromRegisteringTheDimension()
         {

@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace UOM.Specs.Hosting
+namespace UOM.Tests.Acceptance.Hosting
 {
     public class IISExpressHost 
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TechTalk.SpecFlow;
-using UOM.Specs.Hosting;
+using UOM.Tests.Acceptance.Hosting;
 
 namespace UOM.Tests.Acceptance.Hooks
 {
