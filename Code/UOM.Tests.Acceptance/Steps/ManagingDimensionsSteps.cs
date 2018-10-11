@@ -1,18 +1,19 @@
 ﻿using System;
 using RestSharp;
 using TechTalk.SpecFlow;
+using UOM.Tests.Acceptance.Model;
+using UOM.Tests.Acceptance.Tasks;
 
 namespace UOM.Tests.Acceptance
 {
     [Binding]
     public class ManagingDimensionsSteps
     {
-        private string _dimension = "";
-
         [Given(@"I have a dimension called '(.*)'")]
         public void GivenIHaveADimensionCalled(string dimension)
         {
-            this._dimension = dimension;
+            var model = new DimensionTestModel() { Name = dimension };
+            ScenarioContext.Current.Add("Dimension", model);
         }
         
         [Given(@"I have already defined a dimension called '(.*)'")]
@@ -23,12 +24,9 @@ namespace UOM.Tests.Acceptance
         [When(@"I register the dimension")]
         public void WhenIRegisterTheDimension()
         {
-            //TODO: refactor and complete these tests
-            var dimension = new {Name = this._dimension};
-            var client = new RestClient("http://localhost:20070/api");
-            var request = new RestRequest("Dimensions", Method.POST);
-            request.AddObject(dimension);
-            var response = client.Execute(request);
+            var model = ScenarioContext.Current.Get<DimensionTestModel>("Dimension");
+            var task = new DimensionTasks();
+            task.DefineDimension(model);
         }
         
         [Then(@"It should be appear in the list of dimensions")]

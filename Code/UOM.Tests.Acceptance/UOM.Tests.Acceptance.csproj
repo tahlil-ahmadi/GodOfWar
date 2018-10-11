@@ -71,26 +71,33 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConvertUnitOfMeasures.feature.cs">
+    <Compile Include="Features\ConvertUnitOfMeasures.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ConvertUnitOfMeasures.feature</DependentUpon>
     </Compile>
-    <Compile Include="Dimension.feature.cs">
+    <Compile Include="Features\Dimension.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Dimension.feature</DependentUpon>
     </Compile>
-    <Compile Include="ManagingDimensionsSteps.cs" />
+    <Compile Include="Hooks\HostingHook.cs" />
+    <Compile Include="Hosting\IISExpressConstants.cs" />
+    <Compile Include="Hosting\IISExpressHost.cs" />
+    <Compile Include="Hosting\IISExpressHostFactory.cs" />
+    <Compile Include="Hosting\NativeMethods.cs" />
+    <Compile Include="Model\DimensionTestModel.cs" />
+    <Compile Include="Steps\ManagingDimensionsSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tasks\DimensionTasks.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ConvertUnitOfMeasures.feature">
+    <None Include="Features\ConvertUnitOfMeasures.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ConvertUnitOfMeasures.feature.cs</LastGenOutput>
     </None>
-    <None Include="Dimension.feature">
+    <None Include="Features\Dimension.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Dimension.feature.cs</LastGenOutput>
     </None>

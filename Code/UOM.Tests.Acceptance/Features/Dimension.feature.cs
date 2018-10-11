@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace UOM.Tests.Acceptance
+namespace UOM.Tests.Acceptance.Features
 {
     using TechTalk.SpecFlow;
     
