@@ -8,6 +8,7 @@ using Castle.Windsor;
 using Framework.Application;
 using Framework.CastleWindsor;
 using Framework.Core;
+using Framework.Core.EventHandling;
 
 namespace Framework.Config.Castle
 {
@@ -22,6 +23,11 @@ namespace Framework.Config.Castle
             container.Register(Component.For<ICommandBus>()
                 .ImplementedBy<CommandBus>()
                 .LifestyleSingleton());
+
+            container.Register(Component.For<IEventPublisher>()
+                .Forward<IEventListener>()
+                .ImplementedBy<EventAggregator>()
+                .LifestylePerWebRequest());
         }
     }
 }

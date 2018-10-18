@@ -1,4 +1,5 @@
 ﻿using System;
+using FluentAssertions;
 using TechTalk.SpecFlow;
 using UOM.Tests.Acceptance.Model;
 using UOM.Tests.Acceptance.Tasks;
@@ -25,15 +26,15 @@ namespace UOM.Tests.Acceptance.Steps
         {
             var model = ScenarioContext.Current.Get<DimensionTestModel>("Dimension");
             var task = new DimensionTasks();
-            task.DefineDimension(model);
+            model.Id = task.DefineDimension(model);
         }
         
         [Then(@"It should be appear in the list of dimensions")]
         public void ThenItShouldBeAppearInTheListOfDimensions()
         {
-            //TODO:just for the test cause
-            var task = new DimensionTasks();
-            var dimension = task.GetDimension(Guid.Parse("98B87D78-37DA-4876-8742-21997BFF93C9"));
+            var expectedDimension = ScenarioContext.Current.Get<DimensionTestModel>("Dimension");
+            var actualDimension = new DimensionTasks().GetDimension(expectedDimension.Id);
+            actualDimension.Should().BeEquivalentTo(expectedDimension);
         }
 
         [Then(@"The system should prevent me from registering the dimension")]

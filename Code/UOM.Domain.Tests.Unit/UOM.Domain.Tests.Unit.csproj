@@ -85,6 +85,10 @@
     <Analyzer Include="..\packages\xunit.analyzers.0.10.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Framework.Core\Framework.Core.csproj">
+      <Project>{2e452233-f13b-4940-810b-d01b8c51d4a7}</Project>
+      <Name>Framework.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Framework.Domain\Framework.Domain.csproj">
       <Project>{80323DAD-2D29-4E5B-9F84-CC1883657969}</Project>
       <Name>Framework.Domain</Name>

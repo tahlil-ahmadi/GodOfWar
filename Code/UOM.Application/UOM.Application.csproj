@@ -48,6 +48,10 @@
       <Project>{BA244181-E8CD-4F7E-B6A4-DA8B3463E9B6}</Project>
       <Name>Framework.Application</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Framework.Core\Framework.Core.csproj">
+      <Project>{2e452233-f13b-4940-810b-d01b8c51d4a7}</Project>
+      <Name>Framework.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Framework.Domain\Framework.Domain.csproj">
       <Project>{80323dad-2d29-4e5b-9f84-cc1883657969}</Project>
       <Name>Framework.Domain</Name>

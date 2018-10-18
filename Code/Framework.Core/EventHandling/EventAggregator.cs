@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Framework.Core.EventHandling
 {
-    public class EventAggregator : IEventAggregator
+    public class EventAggregator : IEventListener, IEventPublisher
     {
         private readonly List<object> _subscribers = new List<object>();
         public void Publish<T>(T @event) where T : IEvent

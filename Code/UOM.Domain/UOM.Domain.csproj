@@ -49,9 +49,17 @@
     <Compile Include="Model\UnitOfMeasures\UnitOfMeasure.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Framework.Core\Framework.Core.csproj">
+      <Project>{2E452233-F13B-4940-810B-D01B8C51D4A7}</Project>
+      <Name>Framework.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Framework.Domain\Framework.Domain.csproj">
       <Project>{80323DAD-2D29-4E5B-9F84-CC1883657969}</Project>
       <Name>Framework.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UOM.Domain.Contracts\UOM.Domain.Contracts.csproj">
+      <Project>{A26CA9E5-2E60-4303-B2EB-4C6CE4EDB76D}</Project>
+      <Name>UOM.Domain.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

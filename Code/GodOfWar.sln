@@ -65,6 +65,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UOM.DatabaseMigrations", "U
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UOM.Query.Model", "UOM.Query.Model\UOM.Query.Model.csproj", "{D9DAC26F-CCF8-48C3-B999-5DFAAA9BC5BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UOM.Domain.Contracts", "UOM.Domain.Contracts\UOM.Domain.Contracts.csproj", "{A26CA9E5-2E60-4303-B2EB-4C6CE4EDB76D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -155,6 +157,10 @@ Global
 		{D9DAC26F-CCF8-48C3-B999-5DFAAA9BC5BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9DAC26F-CCF8-48C3-B999-5DFAAA9BC5BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9DAC26F-CCF8-48C3-B999-5DFAAA9BC5BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A26CA9E5-2E60-4303-B2EB-4C6CE4EDB76D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A26CA9E5-2E60-4303-B2EB-4C6CE4EDB76D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A26CA9E5-2E60-4303-B2EB-4C6CE4EDB76D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A26CA9E5-2E60-4303-B2EB-4C6CE4EDB76D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -187,6 +193,7 @@ Global
 		{A27F55FD-0EC7-4FC2-A2CD-B7000AC08950} = {1F1E64C5-4A1F-4E44-A576-8C59F6015225}
 		{F9A24802-02B6-4B58-A2B5-B2B28C0FC69D} = {5CCCA150-82EF-4856-B04A-9189BDAA8AF4}
 		{D9DAC26F-CCF8-48C3-B999-5DFAAA9BC5BF} = {5CCCA150-82EF-4856-B04A-9189BDAA8AF4}
+		{A26CA9E5-2E60-4303-B2EB-4C6CE4EDB76D} = {A6191C0A-0564-44C3-92A2-07BC268AC828}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8C0ACC9E-BFCE-4F18-B174-707B5A1379A2}

@@ -16,7 +16,7 @@ namespace UOM.Tests.Acceptance.Hooks
         public static void BeforeTestSuiteRun()
         {
             //TODO: do not hard code this, nooooooooooooooooooo
-            var projectPath = @"C:\Courses\Jame-GodOfWar\Session 14\GodOfWar\Code\ServiceHost";
+            var projectPath = @"C:\Courses\Jame-GodOfWar\Session 15\GodOfWar\Code\ServiceHost";
             host = new IISExpressHost(projectPath, 20070);
             host.Start();
         }

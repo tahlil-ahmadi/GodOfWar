@@ -8,6 +8,7 @@ namespace UOM.Tests.Acceptance.Model
 {
     internal class DimensionTestModel
     {
+        public Guid Id { get; set; }
         public string Name { get; set; }
     }
 }

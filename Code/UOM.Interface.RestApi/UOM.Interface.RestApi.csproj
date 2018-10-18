@@ -73,6 +73,10 @@
       <Project>{6277c973-c95c-41c0-ad6e-825845a72cc4}</Project>
       <Name>UOM.Application.Contracts</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UOM.Domain.Contracts\UOM.Domain.Contracts.csproj">
+      <Project>{A26CA9E5-2E60-4303-B2EB-4C6CE4EDB76D}</Project>
+      <Name>UOM.Domain.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UOM.Query.Model\UOM.Query.Model.csproj">
       <Project>{d9dac26f-ccf8-48c3-b999-5dfaaa9bc5bf}</Project>
       <Name>UOM.Query.Model</Name>

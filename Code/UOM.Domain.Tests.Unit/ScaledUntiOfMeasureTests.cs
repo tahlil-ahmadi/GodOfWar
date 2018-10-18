@@ -1,17 +1,18 @@
 ﻿using System;
 using FluentAssertions;
+using Framework.Core.EventHandling;
 using UOM.Domain.Model.Dimensions;
 using UOM.Domain.Model.UnitOfMeasures;
 using Xunit;
 
 namespace UOM.Domain.Tests.Unit
 {
-    public class ScaledUntiOfMeasureTests
+    public class ScaledUnitOfMeasureTests
     {
         private readonly BaseUnitOfMeasure _baseMeasurement;
-        public ScaledUntiOfMeasureTests()
+        public ScaledUnitOfMeasureTests()
         {
-            var dimension = new Dimension("Length");
+            var dimension = new Dimension("Length", new EventAggregator());
             _baseMeasurement = new BaseUnitOfMeasure(dimension, "Meter", "MR");
         }
 

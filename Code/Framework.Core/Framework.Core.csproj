@@ -41,10 +41,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EventHandling\ActionHandler.cs" />
+    <Compile Include="EventHandling\BaseEvent.cs" />
     <Compile Include="EventHandling\EventAggregator.cs" />
     <Compile Include="EventHandling\IEvent.cs" />
-    <Compile Include="EventHandling\IEventAggregator.cs" />
+    <Compile Include="EventHandling\IEventPublisher.cs" />
     <Compile Include="EventHandling\IEventHandler.cs" />
+    <Compile Include="EventHandling\IEventListener.cs" />
     <Compile Include="IGateway.cs" />
     <Compile Include="IServiceLocator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

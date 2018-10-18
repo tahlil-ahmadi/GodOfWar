@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Framework.Application;
+using Framework.Core.EventHandling;
 using UOM.Application.Contracts;
 using UOM.Domain.Model.Dimensions;
 
@@ -13,14 +14,16 @@ namespace UOM.Application
                                             ICommandHandler<ModifyDimensionCommand>
     {
         private readonly IDimensionRepository _repository;
-        public DimensionCommandHandlers(IDimensionRepository repository)
+        private readonly IEventPublisher _publisher;
+        public DimensionCommandHandlers(IDimensionRepository repository, IEventPublisher publisher)
         {
             _repository = repository;
+            _publisher = publisher;
         }
 
         public void Handle(CreateDimensionCommand command)
         {
-            var dimension = new Dimension(command.Name);
+            var dimension = new Dimension(command.Name, this._publisher);
             _repository.Add(dimension);
         }
 
