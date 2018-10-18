@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Data;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,7 +44,14 @@ namespace UOM.Config.Castle
             var sessionFactory = SessionFactoryConfigurator.Create("DBConnection", typeof(DimensionMapping).Assembly);
 
             container.Register(Component.For<ISession>()
-                .UsingFactoryMethod(a => sessionFactory.OpenSession())
+                .UsingFactoryMethod(a =>
+                {
+                    var connection = a.Resolve<DbConnection>();
+                    return sessionFactory
+                        .WithOptions()
+                        .Connection(connection)
+                        .OpenSession();
+                })
                 .LifestylePerWebRequest());
 
             container.Register(Component.For<IDimensionRepository>()

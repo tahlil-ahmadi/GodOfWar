@@ -13,7 +13,7 @@ namespace ServiceHost
         {
             var container = new WindsorContainer();
             UomBootstrapper.Config(container);
-            FrameworkBootstrapper.Config(container);
+            FrameworkBootstrapper.Config(container,"DBConnection");
 
             var castleActivator = new CastleControllerActivator(container);
             GlobalConfiguration.Configuration.Services.Replace(typeof(IHttpControllerActivator), castleActivator);

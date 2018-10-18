@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -12,26 +13,22 @@ namespace UOM.Query.Model.Repositories
 {
     public class DimensionQueryRepository : IDimensionQueryRepository
     {
+        private readonly IDbConnection _connection;
+        public DimensionQueryRepository(IDbConnection connection)
+        {
+            _connection = connection;
+        }
+
+
         public async Task<List<DimensionQuery>> GetAll()
         {
-            //TODO: refactor this and inject connection manager
-            var connectionString = ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
-            using (var connection = new SqlConnection(connectionString))
-            {
-                var result =  await connection.QueryAsync<DimensionQuery>("SELECT * FROM Dimensions");
-                return result.ToList();
-            }
+            var result =  await _connection.QueryAsync<DimensionQuery>("SELECT * FROM Dimensions");
+            return result.ToList();
         }
 
         public async Task<DimensionQuery> GetById(Guid id)
         {
-            //TODO: refactor this and inject connection manager
-            var connectionString = ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
-            using (var connection = new SqlConnection(connectionString))
-            {
-                return await connection
-                                .QueryFirstOrDefaultAsync<DimensionQuery>("SELECT * FROM Dimensions WHERE Id=@id", new {id= id});
-            }
+            return await _connection.QueryFirstOrDefaultAsync<DimensionQuery>("SELECT * FROM Dimensions WHERE Id=@id", new {id= id});
         }
     }
 }
