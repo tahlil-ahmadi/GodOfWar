@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{59EF6D3A-DC4E-4D23-9452-A7695CD2C3F4}</ProjectGuid>
+    <ProjectGuid>{9BEB9B27-0D53-4D67-97C9-FB56528B511C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ProductManagement.Domain</RootNamespace>
-    <AssemblyName>ProductManagement.Domain</AssemblyName>
+    <RootNamespace>ProductManagement.Application.Contract</RootNamespace>
+    <AssemblyName>ProductManagement.Application.Contract</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,28 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Constraints\Constraint.cs" />
-    <Compile Include="Model\Product\ActualProduct.cs" />
-    <Compile Include="Model\Product\IProductRepository.cs" />
-    <Compile Include="Model\Product\ProductConstraints\DuplicateOptionException.cs" />
-    <Compile Include="Model\Product\ProductConstraints\MaxLengthException.cs" />
-    <Compile Include="Model\Product\ProductConstraints\Option.cs" />
-    <Compile Include="Model\Product\ProductConstraints\ProductConstraint.cs" />
-    <Compile Include="Model\Product\ProductConstraints\NumberRangeConstraint.cs" />
-    <Compile Include="Model\Product\GenericProduct.cs" />
-    <Compile Include="Model\Product\Package.cs" />
-    <Compile Include="Model\Product\Product.cs" />
-    <Compile Include="Model\Product\ProductConstraints\SelectiveConstraint.cs" />
-    <Compile Include="Model\Product\ProductConstraints\StringConstraint.cs" />
+    <Compile Include="CreateProductCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Framework.Domain\Framework.Domain.csproj">
-      <Project>{80323dad-2d29-4e5b-9f84-cc1883657969}</Project>
-      <Name>Framework.Domain</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

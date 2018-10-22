@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{59EF6D3A-DC4E-4D23-9452-A7695CD2C3F4}</ProjectGuid>
+    <ProjectGuid>{200578B0-412C-4D4C-B262-4BAC464DD239}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ProductManagement.Domain</RootNamespace>
-    <AssemblyName>ProductManagement.Domain</AssemblyName>
+    <RootNamespace>ProductManagement.Interface.RestApi</RootNamespace>
+    <AssemblyName>ProductManagement.Interface.RestApi</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,8 +30,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.6\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.6\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.6\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,28 +56,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Constraints\Constraint.cs" />
-    <Compile Include="Model\Product\ActualProduct.cs" />
-    <Compile Include="Model\Product\IProductRepository.cs" />
-    <Compile Include="Model\Product\ProductConstraints\DuplicateOptionException.cs" />
-    <Compile Include="Model\Product\ProductConstraints\MaxLengthException.cs" />
-    <Compile Include="Model\Product\ProductConstraints\Option.cs" />
-    <Compile Include="Model\Product\ProductConstraints\ProductConstraint.cs" />
-    <Compile Include="Model\Product\ProductConstraints\NumberRangeConstraint.cs" />
-    <Compile Include="Model\Product\GenericProduct.cs" />
-    <Compile Include="Model\Product\Package.cs" />
-    <Compile Include="Model\Product\Product.cs" />
-    <Compile Include="Model\Product\ProductConstraints\SelectiveConstraint.cs" />
-    <Compile Include="Model\Product\ProductConstraints\StringConstraint.cs" />
+    <Compile Include="ProductController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Framework.Domain\Framework.Domain.csproj">
-      <Project>{80323dad-2d29-4e5b-9f84-cc1883657969}</Project>
-      <Name>Framework.Domain</Name>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Framework.Application\Framework.Application.csproj">
+      <Project>{ba244181-e8cd-4f7e-b6a4-da8b3463e9b6}</Project>
+      <Name>Framework.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProductManagement.Application.Contract\ProductManagement.Application.Contract.csproj">
+      <Project>{9beb9b27-0d53-4d67-97c9-fb56528b511c}</Project>
+      <Name>ProductManagement.Application.Contract</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

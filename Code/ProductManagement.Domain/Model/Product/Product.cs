@@ -8,6 +8,8 @@ namespace ProductManagement.Domain.Model.Product
     {
         public string Name { get;private set; }
         public long? ParentProductId { get;private set; }
+
+
         protected Product(string name) : this(name, null)
         {
         }

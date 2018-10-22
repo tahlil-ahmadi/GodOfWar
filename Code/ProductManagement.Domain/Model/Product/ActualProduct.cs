@@ -6,6 +6,7 @@ namespace ProductManagement.Domain.Model.Product
     {
         public ActualProduct(string name) : base(name)
         {
+            
         }
     }
 }
