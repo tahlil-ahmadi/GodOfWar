@@ -12,6 +12,11 @@ Task("Clean")
     CleanDirectories(string.Format("../Code/**/bin/{0}",configuration));
 });
 
+Task("Restore-Nuget")
+    .Does(()=> {
+        NuGetRestore(solutionPath);
+});
+
 
 Task("Build")
     .Does(()=>
@@ -48,7 +53,9 @@ Task("Run-Unit-Tests")
 
 Task("Default")
     .IsDependentOn("Clean")
+    .IsDependentOn("Restore-Nuget")
     .IsDependentOn("Build")
-    .IsDependentOn("Run-Unit-Tests");
+    .IsDependentOn("Run-Unit-Tests")
+    ;
 
 RunTarget("Default");
