@@ -10,8 +10,8 @@ namespace ProductManagement.Domain.Model.Product.ProductConstraints
         private List<Option> options;
         public IReadOnlyList<Option> Options => options.AsReadOnly();
 
-        public SelectiveConstraint(Constraint constraint, List<Option> options)
-            : base(constraint)
+        public SelectiveConstraint(long constraintId, List<Option> options)
+            : base(constraintId)
         {
             GuardAgaintsDuplicateValueIn(options);
 
@@ -21,12 +21,17 @@ namespace ProductManagement.Domain.Model.Product.ProductConstraints
         private static void GuardAgaintsDuplicateValueIn(List<Option> options)
         {
             var hasDuplicateValue = options
-                .GroupBy(product => product.Value, 
+                .GroupBy(product => product.Key, 
                                     (key, value) => new {key, Count = value.Count()})
                 .Any(group => group.Count > 1);
 
             if (hasDuplicateValue)
                 throw new DuplicateOptionException();
+        }
+
+        public bool Validate(int value)
+        {
+            return this.options.Any(a => a.Key == value);
         }
     }
 }

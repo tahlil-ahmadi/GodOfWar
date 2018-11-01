@@ -10,7 +10,7 @@ Scenario: Defining a root Generic Product
 	| Volume      |
 	| Description |
 	When I have define a generic product 'Nectar'
-	And I have defined the following constraint for it :
+	And I have assigned the following constraint for it :
 	| Title       | Type        | Options                           |
 	| Taste       | Selective   | Orange, Apple, Banana, Watermelon |
 	| Volume      | NumberRange | 100-3000 cc                       |

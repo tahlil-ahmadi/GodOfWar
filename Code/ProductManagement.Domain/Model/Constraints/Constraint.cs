@@ -2,7 +2,13 @@
 {
     public class Constraint
     {
-        public long Id { get; set; }
-        public string Title { get; set; }
+        public long Id { get; private set; }
+        public string Title { get; private set; }
+
+        public Constraint(long id, string title)
+        {
+            Id = id;
+            Title = title;
+        }
     }
 }

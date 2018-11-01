@@ -7,8 +7,9 @@ namespace ProductManagement.Domain.Model.Product.ProductConstraints
         public long MaxLength { get;private set; }
         public string Format { get;private set; }
 
-        public StringConstraint(Constraint constraint) : base(constraint)
+        public StringConstraint(long constraintId, long maxLength) : base(constraintId)
         {
+            this.MaxLength = maxLength;
         }
     }
 }

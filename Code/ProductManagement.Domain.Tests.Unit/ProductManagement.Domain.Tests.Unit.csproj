@@ -75,6 +75,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="Model\Products\ProductConstraints\NumberRangeConstraint.cs" />
     <Compile Include="Model\Products\ProductConstraints\SelectiveConstraintTests.cs" />
     <Compile Include="Model\Products\ProductTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

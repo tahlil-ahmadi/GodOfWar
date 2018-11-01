@@ -1,16 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{59EF6D3A-DC4E-4D23-9452-A7695CD2C3F4}</ProjectGuid>
+    <ProjectGuid>{774A1E87-59F3-4D0D-9730-758213B4E547}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ProductManagement.Domain</RootNamespace>
-    <AssemblyName>ProductManagement.Domain</AssemblyName>
+    <RootNamespace>ProductManagement.Application</RootNamespace>
+    <AssemblyName>ProductManagement.Application</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,30 +42,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Constraints\Constraint.cs" />
-    <Compile Include="Model\Product\DuplicateProductConstraintException.cs" />
-    <Compile Include="Model\Product\ProductConstraints\DuplicateOptionException.cs" />
-    <Compile Include="Model\Product\ProductConstraints\Option.cs" />
-    <Compile Include="Model\Product\ProductConstraints\ProductConstraint.cs" />
-    <Compile Include="Model\Product\ProductConstraints\NumberRangeConstraint.cs" />
-    <Compile Include="Model\Product\GenericProduct.cs" />
-    <Compile Include="Model\Product\ProductConstraints\SelectiveConstraint.cs" />
-    <Compile Include="Model\Product\ProductConstraints\StringConstraint.cs" />
+    <Compile Include="ConstraintFactory.cs" />
+    <Compile Include="GenericProductCommandHandlers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Framework.Domain\Framework.Domain.csproj">
-      <Project>{80323dad-2d29-4e5b-9f84-cc1883657969}</Project>
-      <Name>Framework.Domain</Name>
+    <ProjectReference Include="..\Framework.Application\Framework.Application.csproj">
+      <Project>{BA244181-E8CD-4F7E-B6A4-DA8B3463E9B6}</Project>
+      <Name>Framework.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProductManagement.Application.Contracts\ProductManagement.Application.Contracts.csproj">
+      <Project>{E90DF43F-2816-4DDE-AD39-4554DFEF461A}</Project>
+      <Name>ProductManagement.Application.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProductManagement.Domain\ProductManagement.Domain.csproj">
+      <Project>{59EF6D3A-DC4E-4D23-9452-A7695CD2C3F4}</Project>
+      <Name>ProductManagement.Domain</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

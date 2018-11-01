@@ -10,9 +10,9 @@ namespace ProductManagement.Domain.Model.Product.ProductConstraints
     public abstract class ProductConstraint
     {
         public long ConstraintId { get; set; }
-        protected ProductConstraint(Constraint constraint)
+        protected ProductConstraint(long constraintId)
         {
-            this.ConstraintId = constraint.Id;
+            this.ConstraintId = constraintId;
         }
     }
 }

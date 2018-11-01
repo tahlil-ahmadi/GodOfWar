@@ -117,7 +117,7 @@ this.ScenarioInitialize(scenarioInfo);
                         "String",
                         ""});
 #line 13
- testRunner.And("I have defined the following constraint for it :", ((string)(null)), table2, "And ");
+ testRunner.And("I have assigned the following constraint for it :", ((string)(null)), table2, "And ");
 #line 18
  testRunner.Then("It should be available in the list of generic products", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
