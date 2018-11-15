@@ -49,7 +49,10 @@
     <Compile Include="EventHandling\IEventListener.cs" />
     <Compile Include="IGateway.cs" />
     <Compile Include="IServiceLocator.cs" />
+    <Compile Include="Logging\Logger.cs" />
+    <Compile Include="Logging\ILogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
