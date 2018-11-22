@@ -11,7 +11,7 @@ namespace ServiceHost
 {
     public static class HostConfigurator
     {
-        public static void Config()
+        public static void Config(HttpConfiguration configuration)
         {
             var container = new WindsorContainer();
             FrameworkBootstrapper.Config(container,"DBConnection");
@@ -19,9 +19,8 @@ namespace ServiceHost
             ProductBootstrapper.Config(container);
 
             var castleActivator = new CastleControllerActivator(container);
-            GlobalConfiguration.Configuration.Services.Replace(typeof(IHttpControllerActivator), castleActivator);
-            GlobalConfiguration.Configuration.Services.Replace(typeof(IHttpControllerSelector), 
-                new CqsControllerSelector(GlobalConfiguration.Configuration));
+            configuration.Services.Replace(typeof(IHttpControllerActivator), castleActivator);
+            configuration.Services.Replace(typeof(IHttpControllerSelector),new CqsControllerSelector(GlobalConfiguration.Configuration));
         }
     }
 }

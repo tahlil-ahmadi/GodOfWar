@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="lib/oidc-client.min.js"></script>
+    <script src="lib/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $("#loginButton").click(function () {
+                const config = {
+                    authority: "http://localhost:5000/",
+                    client_id: "GodOfWarFront",
+                    redirect_uri: "http://localhost:7000/auth-callback.html",
+                    response_type: "token id_token",
+                    scope: "profile openid",
+                };
+                var userManager = new Oidc.UserManager(config);
+                userManager.signinRedirect();
+            });
+        });
+    </script>
+</head>
+<body>
+
+
+    <button id="loginButton">Do Login</button>
+</body>
+</html>

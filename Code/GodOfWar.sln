@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.106
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{A6191C0A-0564-44C3-92A2-07BC268AC828}"
 EndProject
@@ -80,6 +80,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductManagement.Config.Castle", "ProductManagement.Config.Castle\ProductManagement.Config.Castle.csproj", "{DA3F74CD-067D-49CD-9CFD-28C7A7CCCB99}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.SeriLog", "Framework.SeriLog\Framework.SeriLog.csproj", "{442568D8-A83C-446B-B3C3-8123B008345D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PresentationHost", "PresentationHost\PresentationHost.csproj", "{D09C93BE-F269-4562-A42A-0E562389E26C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -195,6 +197,10 @@ Global
 		{442568D8-A83C-446B-B3C3-8123B008345D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{442568D8-A83C-446B-B3C3-8123B008345D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{442568D8-A83C-446B-B3C3-8123B008345D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D09C93BE-F269-4562-A42A-0E562389E26C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D09C93BE-F269-4562-A42A-0E562389E26C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D09C93BE-F269-4562-A42A-0E562389E26C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D09C93BE-F269-4562-A42A-0E562389E26C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

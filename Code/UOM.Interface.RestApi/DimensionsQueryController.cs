@@ -28,10 +28,12 @@ namespace UOM.Interface.RestApi
             return await _repository.GetAll();
         }
 
-        public async Task<DimensionQuery> Get(Guid id)
+        public DimensionQuery Get(Guid id)
         {
+            var x = User;
+            return new DimensionQuery() { Id = id, Name = "X" };
             //TODO: use dto instead of query models
-            return await _repository.GetById(id);
+            //return await _repository.GetById(id);
         }
     }
 }
