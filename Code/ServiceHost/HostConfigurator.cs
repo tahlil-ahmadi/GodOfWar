@@ -20,7 +20,7 @@ namespace ServiceHost
 
             var castleActivator = new CastleControllerActivator(container);
             configuration.Services.Replace(typeof(IHttpControllerActivator), castleActivator);
-            configuration.Services.Replace(typeof(IHttpControllerSelector),new CqsControllerSelector(GlobalConfiguration.Configuration));
+            configuration.Services.Replace(typeof(IHttpControllerSelector),new CqsControllerSelector(configuration));
         }
     }
 }

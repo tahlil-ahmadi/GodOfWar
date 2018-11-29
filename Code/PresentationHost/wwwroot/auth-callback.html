@@ -7,7 +7,7 @@
 
     <script type="text/javascript">
         $(function () {
-            const config = {
+            var config = {
                 authority: "http://localhost:5000/",
                 client_id: "GodOfWarFront",
                 redirect_uri: "http://localhost:7000/auth-callback.html",
@@ -23,9 +23,9 @@
                         "authorization": res.token_type + " " + res.access_token,
                     },
                     url: "http://localhost:20070/api/dimensions/1b76f88e-1ffc-40df-93a8-f379aa2a6017"
-                }).done(function (res) {
+                }).done(function(res) {
                     debugger;
-                })
+                });
             });
         });
     </script>

@@ -10,7 +10,7 @@ using Framework.Core;
 using Framework.Core.EventHandling;
 using UOM.Application;
 using UOM.Application.Contracts;
-using UOM.Domain.Contracts;
+using UOM.Interface.Facade.Contracts;
 using UOM.Query.Model.Models;
 using UOM.Query.Model.Repositories;
 
@@ -18,27 +18,15 @@ namespace UOM.Interface.RestApi
 {
     public class DimensionsController : ApiController, IGateway
     {
-        private readonly ICommandBus _commandBus;
-        private readonly IEventListener _listener;
-        private readonly IEventPublisher _publisher;
-
-        public DimensionsController(ICommandBus commandBus, IEventListener listener,
-            IEventPublisher publisher)
+        private readonly IDimensionFacade _facade;
+        public DimensionsController(IDimensionFacade facade)
         {
-            _commandBus = commandBus;
-            _listener = listener;
-            _publisher = publisher;
+            _facade = facade;
         }
 
         public Guid Post(CreateDimensionCommand command)
         {
-            var id = Guid.Empty;
-            this._listener.Subscribe(new ActionHandler<DimensionCreated>(a =>
-            {
-                id = a.Id;
-            }));
-            _commandBus.Dispatch(command);
-            return id;
+            return _facade.Create(command);
         }
     }
 }

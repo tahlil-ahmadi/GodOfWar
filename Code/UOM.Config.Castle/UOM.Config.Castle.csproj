@@ -66,6 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PermissionInterceptor.cs" />
     <Compile Include="UomBootstrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -101,6 +102,14 @@
     <ProjectReference Include="..\UOM.Domain\UOM.Domain.csproj">
       <Project>{a6aa75a8-a5f3-482c-8af3-6eddb917779c}</Project>
       <Name>UOM.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UOM.Interface.Facade.Contracts\UOM.Interface.Facade.Contracts.csproj">
+      <Project>{37dc8d0e-964e-4aab-bb94-3b0947757811}</Project>
+      <Name>UOM.Interface.Facade.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UOM.Interface.Facade\UOM.Interface.Facade.csproj">
+      <Project>{73fccf28-d484-490f-9fde-02a331ee81d5}</Project>
+      <Name>UOM.Interface.Facade</Name>
     </ProjectReference>
     <ProjectReference Include="..\UOM.Interface.RestApi\UOM.Interface.RestApi.csproj">
       <Project>{0a3974a6-17be-46dc-a923-daef902a7a7e}</Project>

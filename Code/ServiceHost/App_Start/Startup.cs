@@ -23,7 +23,7 @@ namespace ServiceHost.App_Start
         {
             app.UseIdentityServerBearerTokenAuthentication(new IdentityServerBearerTokenAuthenticationOptions
             {
-                Authority = "http://localhost:5000"
+                Authority = "http://localhost:5000",
             });
         }
     }

@@ -24,6 +24,7 @@ namespace UOM.Interface.RestApi
 
         public async Task<List<DimensionQuery>> Get()
         {
+            var user = this.User;
             //TODO: use dto instead of query models
             return await _repository.GetAll();
         }

@@ -22,22 +22,6 @@ namespace ProductManagement.Interface.RestApi
         public void Post(CreateGenericProductCommand command)
         {
             //TODO: use a model binder here and remove this hard-coded command initialization!
-            command = new CreateGenericProductCommand()
-            {
-                Name = "X",
-                Constraints = new List<ProductConstraintDto>()
-                {
-                    new NumericRangeConstraintDto()
-                    {
-                        ConstraintId = 1, Max = 10, Min = 1
-                    },
-                    new StringProductConstraintDto()
-                    {
-                        ConstraintId = 2, MaxLength = 255
-                    }
-                }
-            };
-
             _bus.Dispatch(command);
         }
     }

@@ -9,12 +9,12 @@
     <script type="text/javascript">
         $(function () {
             $("#loginButton").click(function () {
-                const config = {
+                var config = {
                     authority: "http://localhost:5000/",
                     client_id: "GodOfWarFront",
                     redirect_uri: "http://localhost:7000/auth-callback.html",
                     response_type: "token id_token",
-                    scope: "profile openid",
+                    scope: "profile openid uom product",
                 };
                 var userManager = new Oidc.UserManager(config);
                 userManager.signinRedirect();

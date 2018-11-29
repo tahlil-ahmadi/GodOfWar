@@ -12,6 +12,7 @@ using Framework.NH;
 using NHibernate;
 using UOM.Application;
 using UOM.Domain.Model.Dimensions;
+using UOM.Interface.Facade;
 using UOM.Interface.RestApi;
 using UOM.Persistence.NH.Mappings;
 using UOM.Persistence.NH.Repositories;
@@ -23,10 +24,18 @@ namespace UOM.Config.Castle
     {
         public static void Config(IWindsorContainer container)
         {
+            container.Register(Component.For<PermissionInterceptor>().LifestyleBoundToNearest<IGateway>());
+
             container.Register(Classes.FromAssemblyContaining<DimensionCommandHandlers>()
                 .BasedOn(typeof(ICommandHandler<>))
                 .WithServiceAllInterfaces()
                 .LifestyleTransient());
+
+            container.Register(Classes.FromAssemblyContaining<DimensionFacade>()
+                .BasedOn<IFacadeService>()
+                .WithServiceFromInterface()
+                .LifestyleBoundToNearest<IGateway>()
+                .Configure(a=> a.Interceptors<PermissionInterceptor>()));
 
             container.Register(Classes.FromAssemblyContaining<DimensionsController>()
                 .BasedOn<IGateway>()

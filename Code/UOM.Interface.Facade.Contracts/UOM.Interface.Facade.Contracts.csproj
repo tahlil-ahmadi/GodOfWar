@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0A3974A6-17BE-46DC-A923-DAEF902A7A7E}</ProjectGuid>
+    <ProjectGuid>{37DC8D0E-964E-4AAB-BB94-3B0947757811}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UOM.Interface.RestApi</RootNamespace>
-    <AssemblyName>UOM.Interface.RestApi</AssemblyName>
+    <RootNamespace>UOM.Interface.Facade.Contracts</RootNamespace>
+    <AssemblyName>UOM.Interface.Facade.Contracts</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,20 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Net.Http.Formatting, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.6\lib\net45\System.Net.Http.Formatting.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Http, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.6\lib\net45\System.Web.Http.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Http.WebHost, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.6\lib\net45\System.Web.Http.WebHost.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,34 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DimensionsQueryController.cs" />
-    <Compile Include="DimensionsController.cs" />
+    <Compile Include="IDimensionFacade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Framework.Application\Framework.Application.csproj">
-      <Project>{BA244181-E8CD-4F7E-B6A4-DA8B3463E9B6}</Project>
-      <Name>Framework.Application</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Framework.Core\Framework.Core.csproj">
-      <Project>{2e452233-f13b-4940-810b-d01b8c51d4a7}</Project>
+      <Project>{2E452233-F13B-4940-810B-D01B8C51D4A7}</Project>
       <Name>Framework.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\UOM.Application.Contracts\UOM.Application.Contracts.csproj">
       <Project>{6277c973-c95c-41c0-ad6e-825845a72cc4}</Project>
       <Name>UOM.Application.Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UOM.Interface.Facade.Contracts\UOM.Interface.Facade.Contracts.csproj">
-      <Project>{37DC8D0E-964E-4AAB-BB94-3B0947757811}</Project>
-      <Name>UOM.Interface.Facade.Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UOM.Query.Model\UOM.Query.Model.csproj">
-      <Project>{d9dac26f-ccf8-48c3-b999-5dfaaa9bc5bf}</Project>
-      <Name>UOM.Query.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

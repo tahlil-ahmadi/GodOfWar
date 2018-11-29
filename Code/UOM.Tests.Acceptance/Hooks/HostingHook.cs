@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,8 +16,7 @@ namespace UOM.Tests.Acceptance.Hooks
         [BeforeTestRun]
         public static void BeforeTestSuiteRun()
         {
-            //TODO: do not hard code this, nooooooooooooooooooo
-            var projectPath = @"C:\Courses\Jame-GodOfWar\Session 15\GodOfWar\Code\ServiceHost";
+            var projectPath = Path.GetFullPath(@"..\..\..\ServiceHost");
             host = new IISExpressHost(projectPath, 20070);
             host.Start();
         }

@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IFacadeService.cs" />
     <Compile Include="EventHandling\ActionHandler.cs" />
     <Compile Include="EventHandling\BaseEvent.cs" />
     <Compile Include="EventHandling\EventAggregator.cs" />
